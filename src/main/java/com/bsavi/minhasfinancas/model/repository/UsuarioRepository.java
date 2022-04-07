@@ -1,0 +1,15 @@
+package com.bsavi.minhasfinancas.model.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.bsavi.minhasfinancas.model.entity.Usuario;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+	
+	// select * from usuario where email = email
+	//Optional<Usuario> findByEmail(String email);
+	boolean existsByEmail(String email);
+	
+}
